@@ -1,0 +1,5 @@
+print "This is my first ruby lesson."
+puts "This is my second line."
+print "This is my heart."
+puts "My heart is my source."
+puts "What are my other sources?"

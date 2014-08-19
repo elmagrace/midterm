@@ -1,4 +1,16 @@
 # Write a program that prints 99 bottles of beer on the wall.
+count = 99
+until count == 1
+
+	puts "#{count} bottles of beer on the wall"
+	puts "#{count} bottles of beer!"
+	puts "You take one down and pass it around,"
+
+	count -= 1
+	puts "#{count} bottles of beer on the wall!"
+end
+
+
 # The song starts with 
 # 99 bottles of beer on the wall
 # 99 bottles of beer!

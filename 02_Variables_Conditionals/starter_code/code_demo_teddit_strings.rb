@@ -13,9 +13,6 @@
 #Version 1 - Welcome the user to Teddit, print the first story to the terminal.
 ###########
 ###########
-#
-#'Welcome to Teddit! a text based news aggregator. Get today\'s news tomorrow!'
-#'Story: Man raised by wolverines, then eaten Current upvotes: 4'
 
 
 #Version 2 - Replace the story title and upvotes with variables.
@@ -33,6 +30,27 @@
 #Version 4 - Use string interpolation and escape characters, polish the output.
 ###########
 ###########
+def print_headline
+	p "Welcome to Teddit a text based news aggregator. Get today\'s news tomorrow!"
+end
+
+def get_title
+	print "enter a title: "
+	gets.chomp
+end
+
+def show_story_line title, votes
+	puts "Story #{title}, then eaten current upvotes: #{upvotes}"
+end
+
+print_headline
+
+title = get_title
+upvores = get_upvotes
+
+show_story_line "hello title world", 4
+show_story_line "hello title world", 5
+show_story_line, 4
 
 
 #Version 5 - Adding methods
