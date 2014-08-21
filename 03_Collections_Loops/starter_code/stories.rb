@@ -1,13 +1,5 @@
-# We're going to add a remote data source to pull in stories from Mashable and Digg.
-  # http://mashable.com/stories.json
-  # http://digg.com/api/news/popular.json
-# These stories will also be upvoted based on our rules. No more user input!
-
-# Pull the json, parse it and then make a new story hash out of each story(Title, Category, Upvotes)
-# Add each story to an array and display your "Front page"
-
-require 'rest-client'
 require 'json'
+require 'rest-client'
 
 def get_input
   gets.strip #chomp was also used..
@@ -15,6 +7,11 @@ end
  
 def show_message message
   puts message
+end
+ 
+def show_new_story_nofitication story
+  # story will be a hash (look at format below)
+  puts "NEW STORY!! title: #{story[:title]}, with #{story[:upvotes]}. [category: #{story[:category]}]"
 end
  
 def calculate_upvotes story
@@ -28,22 +25,22 @@ def calculate_upvotes story
   story[:upvotes] *= 3 if story[:category].downcase == "food"
  
 end
-
+ 
+ 
 def get_from_reddit
   response = JSON.load( RestClient.get('http://www.reddit.com/.json') )
+  response['hot'].map { |entry| #bug
  
   response['data']['children'].map do |child|
      story = {
-        title:  child['data']['title'],
-        category: child['data']['subreddit']
+        title:  entry['title'], #bug 
+        category: child['channel']#bug
       }
  
      calculate_upvotes story
      show_new_story_nofitication story
   end
 end
+  
  
- 
- 
-get_from_mashable 
-
+get_from_reddit

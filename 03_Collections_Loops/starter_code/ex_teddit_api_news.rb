@@ -6,8 +6,9 @@
 # Pull the json, parse it and then make a new story hash out of each story(Title, Category, Upvotes)
 # Add each story to an array and display your "Front page"
 
-require 'rest-client'
+
 require 'json'
+require 'rest-client'
 
 def get_input
   gets.strip #chomp was also used..

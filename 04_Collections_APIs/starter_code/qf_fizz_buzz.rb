@@ -1,5 +1,5 @@
 # method to check for equality
-def assert_equal(expected, actual)
+def fizzbuzz(number)
   raise "Expected #{expected} to match #{actual}" unless expected == actual
 end
 
@@ -7,8 +7,19 @@ end
 # But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. 
 # For numbers which are multiples of both three and five print “FizzBuzz”.
 #
-# Your code here
+fizz_buzz = 0
+until fizz_buzz < 100
+	puts fizz_buzz
+end 
 
+def fizzbuzz number
+	str = ''
+	str += 'Fizz' if number % 3 == 0
+	str += 'Buzz' if number % 5 == 0
+	str = number if str.empty?
+	str
+end 
+	
 
 # Tests
 assert_equal fizzbuzz(1), 1

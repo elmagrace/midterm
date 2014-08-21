@@ -48,6 +48,7 @@ categories = []
 assert_equal categories, []
 
 # Create an empty array named categories using Array's #new method
+<<<<<<< HEAD
 categories = Array.new 
 assert_equal categories, []
 
@@ -55,17 +56,35 @@ assert_equal categories, []
 categories.push ("Music") # ads to end of array
 categories.unshift("Weather") # adds to start of array
 categories. << "Florida" #
+=======
+categories = Array.new
+assert_equal categories, []
+
+# Add 3 stories to the categories array. Each time using a different method.
+categories.push("Music") # adds to end of array
+categories.unshift("Weather") # adds to start of array
+categories << "Florida" #
+>>>>>>> 5b0be148bbe9290f80814078229be44973534fe3
 assert_equal ["Florida", "Music", "Weather"], categories.sort
 
 # Ensure only unique categories get stored
 categories << "Florida"
 categories.uniq!
+<<<<<<< HEAD
 assert_equal ["Florida", "Music", "Weather"], categories.sort 
+=======
+assert_equal ["Florida", "Music", "Weather"], categories.sort
+>>>>>>> 5b0be148bbe9290f80814078229be44973534fe3
 
-# Write a conditional that adds "Family" to the category list if it includes both Animals, and Shopping
+# Write a conditional that adds "Family" to the
+# category list if it includes both Shopping and Animals
 categories << "Animals"
+<<<<<<< HEAD
 
 if categories.include("Animals") && categories.include("Shopping")
+=======
+if categories.include?("Animals") && categories.include?("Shopping")
+>>>>>>> 5b0be148bbe9290f80814078229be44973534fe3
   categories << "Family"
 end
 
@@ -74,7 +93,11 @@ assert_equal(false, categories.include?("Family"))
 categories << "Shopping"
 
 #repeat check here
+<<<<<<< HEAD
 if categories.include ("Animal") && categories.include ("Shopping")
+=======
+if categories.include?("Animals") && categories.include?("Shopping")
+>>>>>>> 5b0be148bbe9290f80814078229be44973534fe3
   categories << "Family"
 end
 
@@ -82,11 +105,21 @@ assert_equal(true, categories.include?("Family"))
 
 # Print all of the Array elements as a comma separated string in alphabetical order
 # persist the sorting of categories
+<<<<<<< HEAD
 assert_equal("Animals, Family, Florida, Music, Shopping, Weather", categories.sort!.join(".")
+=======
+assert_equal("Animals, Family, Florida, Music, Shopping, Weather", categories.sort!.join(', '))
+>>>>>>> 5b0be148bbe9290f80814078229be44973534fe3
 assert_equal(%w(Animals Family Florida Music Shopping Weather), categories)
+# %w(Animals Family Florida Music Shopping Weather)
+# ['Animals', 'Family', 'Florida', 'Music', 'Shopping', 'Weather']
 
 # Remove the first category from the array and print it to the screen "First Category: Category here"
+<<<<<<< HEAD
 first_category = categories.first.shift #categories[0]
+=======
+first_category = categories.shift  #.first # categories[0]
+>>>>>>> 5b0be148bbe9290f80814078229be44973534fe3
 assert_equal("First Category: Animals", "First Category: #{first_category}")
 assert_equal(5, categories.length) # get it's length
 
@@ -103,17 +136,41 @@ if categories.length > 5 #get it's length
   categories << "Misc"
 end
 
+<<<<<<< HEAD
 assert_equal(4, categories.length) # get it's length
+=======
+puts 'asserting'
+assert_equal(4, categories.size) # get it's length
+>>>>>>> 5b0be148bbe9290f80814078229be44973534fe3
 
 categories << "Medicine"
 categories << "Physics"
 
 if categories.___ > 5 #get it's length
   categories.___ # empty the array
-  categories << "Misc"
+  categories.push "Misc"
 end
 
 assert_equal(1, categories.___) # get it's size
 assert_equal(["Misc"], categories)
 
 puts "YOU'RE DONE!"
+
+
+
+# users = [
+#     {:user => "Salman Ansari", :role => "Instructor"},
+#     {:user => "Brooks Swinnerton", :role=> "TA"},
+#     {:user => "Brian Fountain", :role => "TA"}
+#   ]
+
+#   ga_markets.each do |market|
+#     puts market
+#   end
+
+#   ["NYC", "LA", "SYD", "LDN"].each do |market|
+#     puts market
+#   end
+
+
+
