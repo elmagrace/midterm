@@ -46,19 +46,19 @@ puts "#{edward[:name]} has #{grade_status(edward)} #{edward[:course]}"
 #####################################################################################################
 
 # # How about using a class
-# class Student
-#  attr_accessor :name, :major, :course, :grade
-# end
+class Student
+attr_accessor :name, :major, :course, :grade
+end
 
-# def grade_status(student)
-#  if student.grade == "F"
-#    "failed"
-#  elsif ["D", "E"].include?(student.grade) && student.major == student.course
-#    "failed"
-#  else
-#    "passed"
-#  end
-# end
+def grade_status(student)
+if student.grade == "F"
+	 "failed"
+elsif ["D", "E"].include?(student.grade) && student.major == student.course
+   "failed"
+  else
+    "passed"
+ end
+ end
 
 # jimmy = Student.new
 # jimmy.name = "Jimmy Mazzy"

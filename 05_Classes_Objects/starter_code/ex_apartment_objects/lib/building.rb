@@ -1,4 +1,10 @@
 #Building Class
 class Building
+		attr_accessor :name, :address 
 
-end
+	def initialize(name, address)
+		@name = name
+		@address = address
+	end 
+
+
